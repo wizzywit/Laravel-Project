@@ -20,7 +20,7 @@
                     <h3><strong>Course Description</strong></h3>
                     <p>{{$course->description}}</p>
 
-                    <a href="/course/{{$course->code}}/edit">Edit</a>
+                    <a href="/course/{{$course->id}}/edit">Edit</a>
                 </div>
             </div>
         </div>

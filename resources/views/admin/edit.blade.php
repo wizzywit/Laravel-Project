@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Edit Course') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('course.update', ['course' => $course->code]) }}">
+                    <form method="POST" action="{{ route('course.update', ['course' => $course->id]) }}">
                         @method('PATCH')
                         @csrf
 

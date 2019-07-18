@@ -107,7 +107,7 @@ class CoursesController extends Controller
     {
         
         $check = Courses::where('code',$request->code);
-        if ($check->count() <=1){
+        if ($check->count() < 1 || ($course->code == $request->code)){
         $VvalidatedData = $request->validate([
             'code' => ['required', 'string', 'max:7'],
             'title' => ['required', 'string', 'max:255',],
@@ -128,6 +128,13 @@ class CoursesController extends Controller
         }
 
         else {
+
+            $VvalidatedData = $request->validate([
+                'code' => ['required', 'string', 'max:7', 'unique:courses'],
+                'title' => ['required', 'string', 'max:255',],
+                'credit' => ['required', 'integer', 'max:6']
+    
+            ]);
             
         }
     }

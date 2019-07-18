@@ -18,7 +18,7 @@
                       <ul>
                       @foreach ($courses as $course)
                         <li>
-                            <a href="/course/{{$course->code}}">{{$course->code}}</a>
+                            <a href="/course/{{$course->id}}">{{$course->code}}</a>
                         </li>
                       @endforeach
                       </ul>
